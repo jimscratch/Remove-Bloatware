@@ -63,6 +63,12 @@ $DangerousApps = @(
     #"*Microsoft.MicrosoftEdge*"
     #"*Microsoft.WindowsStore*"
 )
+$UselessServices = @(
+    "spooler" #print spooler
+    "GoogleChromeElevationService" #google service 1
+    "gupdate" #google service 2
+    "gupdatem" #google service 3
+)
 
 $host.UI.RawUI.WindowTitle = "Bloatware Removal Script"
 Write-Host "Remove Bloatware Script, verified safe, used, and created by Zezypisa"
@@ -70,7 +76,7 @@ Write-Host "I am not responsible for any data loss, operating system corruption,
 Write-Host "Use this at your own risk. You will need to manually disable the untested and dangerous programs to remove them"
 $confirmation = Read-Host "Are you Sure You Want To Proceed [yes\no]"
 if ($confirmation -eq "yes") {
-    $confirmation = Read-Host "Do you want to remove safe programs, 3rd party apps, untested programs, or dangerous programs [safe\3rdparty\untested\dangerous]"
+    $confirmation = Read-Host "Do you want to remove safe programs, 3rd party apps, untested programs, or dangerous programs [safe\3rdparty\untested\dangerous\uselessservices]"
     if ($confirmation -eq 'safe') {
         foreach ($SafeApps in $SafeApps) {
              Get-AppxPackage -Name $SafeApps | Remove-AppxPackage -ErrorAction SilentlyContinue
@@ -98,6 +104,25 @@ if ($confirmation -eq "yes") {
         }
         pause
         exit
+    }
+    if ($confirmation -eq 'useless services') {
+        $confirmation = Read-Host "Do you want to start or stop useless services [start\stop]"
+            if ($confirmation -eq "start") {
+                foreach ($UselessServices in $UselessServices) {
+                    cmd /c sc start "$UselessServices"
+                    cmd /c sc config "$UselessServices" startup=system
+                }
+                pause
+                exit
+            }
+            if ($confirmation -eq "stop") {
+                foreach ($UselessServices in $UselessServices) {
+                    cmd /c sc stop "$UselessServices"
+                    cmd /c sc config "$UselessServices" startup=disabled
+                }
+                pause
+                exit
+            }
     }
 }
 if ($confirmation -eq "no") {
