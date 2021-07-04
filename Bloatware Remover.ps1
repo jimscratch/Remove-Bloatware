@@ -65,37 +65,29 @@ $DangerousApps = @(
 )
 
 $host.UI.RawUI.WindowTitle = "Bloatware Removal Script"
-Write-Host "Remove Bloatware Script, verified safe, used, and created by Zezypisa"
+Write-Host "Remove Bloatware Script, verified safe, used, and created by Zezypisa."
 Write-Host "I am not responsible for any data loss, operating system corruption, or any other damage to your hardware or software with this script."
-Write-Host "Use this at your own risk. You will need to manually disable the untested and dangerous programs to remove them"
-$confirmation = Read-Host "Are you Sure You Want To Proceed [yes\no]"
+Write-Host "Use this at your own risk. You will need to manually disable the untested and dangerous programs to remove them."
+$confirmation = Read-Host "Are you Sure You Want To Proceed? [yes\no]"
 if ($confirmation -eq "yes") {
     $confirmation = Read-Host "Do you want to remove safe programs, 3rd party apps, untested programs, or dangerous programs [safe\3rdparty\untested\dangerous]"
     if ($confirmation -eq 'safe') {
-        foreach ($SafeApps in $SafeApps) {
-             Get-AppxPackage -Name $SafeApps | Remove-AppxPackage -ErrorAction SilentlyContinue
-        }
+        foreach ($SafeApps in $SafeApps) {Get-AppxPackage -Name $SafeApps | Remove-AppxPackage -ErrorAction SilentlyContinue}
         pause
         exit
     }
     if ($confirmation -eq '3rdparty') {
-        foreach ($ThirdPartyApps in $ThirdPartyApps) {
-             Get-AppxPackage -Name $ThirdPartyApps | Remove-AppxPackage -ErrorAction SilentlyContinue
-        }
+        foreach ($ThirdPartyApps in $ThirdPartyApps) {Get-AppxPackage -Name $ThirdPartyApps | Remove-AppxPackage -ErrorAction SilentlyContinue}
         pause
         exit
     }
     if ($confirmation -eq 'untested') {
-        foreach ($UntestedApps in $UntestedApps) {
-             Get-AppxPackage -Name $UntestedApps | Remove-AppxPackage -ErrorAction SilentlyContinue
-        }
+        foreach ($UntestedApps in $UntestedApps) { Get-AppxPackage -Name $UntestedApps | Remove-AppxPackage -ErrorAction SilentlyContinue}
         pause
         exit
     }
     if ($confirmation -eq 'dangerous') {
-        foreach ($DangerousApps in $DangerousApps) {
-             Get-AppxPackage -Name $DangerousApps | Remove-AppxPackage -ErrorAction SilentlyContinue
-        }
+        foreach ($DangerousApps in $DangerousApps) {Get-AppxPackage -Name $DangerousApps | Remove-AppxPackage -ErrorAction SilentlyContinue }
         pause
         exit
     }
