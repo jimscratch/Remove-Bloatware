@@ -1,4 +1,4 @@
-# Bloatware-Remover
+# Bloatware Remover
 Removes bloatware from windows 10 depending on how intense it is.
 
 Remove Bloatware Script, verified safe, used, and created by Zezypisa.
