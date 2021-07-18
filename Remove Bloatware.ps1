@@ -66,12 +66,14 @@ $DangerousApps = @(
 
 $host.UI.RawUI.WindowTitle = "Bloatware Removal Script"
 #Removes bloatware from windows 10 depending on how intense it is.
+cls
 Write-Host "Remove Bloatware Script, verified safe, used, and created by Zezypisa."
 Write-Host "Make sure to run this with Administrator, or it will not work."
 Write-Host "Use this at your own risk."
 Write-Host "Note: You will need to manually disable the untested and dangerous programs to remove them."
 $confirmation = Read-Host "Are you Sure You Want To Proceed? [yes\no]"
 if ($confirmation -eq "yes") {
+    cls
     $confirmation = Read-Host "Do you want to remove safe programs, untested programs, or dangerous programs [safe\untested\dangerous]"
     if ($confirmation -eq 'safe') {
         foreach ($SafeApps in $SafeApps) {Get-AppxPackage -Name $SafeApps | Remove-AppxPackage -ErrorAction SilentlyContinue}
@@ -88,6 +90,7 @@ if ($confirmation -eq "yes") {
     exit
 }
 if ($confirmation -eq "no") {
+    cls
     Write-Host "Alright, Cancelled. No files have been modified"
     pause
     exit
