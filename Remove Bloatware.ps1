@@ -21,6 +21,7 @@ if ($confirmation -eq "yes") {
         "*Microsoft.MicrosoftOfficeHub*"
         "*Microsoft.MicrosoftSolitaireCollection*"
         "*Microsoft.Office.OneNote*"
+        "*Microsoft.MSPaint*"
         "*Microsoft.People*"
         "*Microsoft.Print3D*"
         "*Microsoft.SkypeApp*"
