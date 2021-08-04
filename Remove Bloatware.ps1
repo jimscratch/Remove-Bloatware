@@ -36,7 +36,6 @@ if ($confirmation -eq "yes") {
         "*Microsoft.GetHelp*"
         "*Microsoft.Messaging*"
         "*Microsoft.WindowsCamera*"
-        "*RealtekSemiconductorCorp.RealtekAudioControl*"
     )
     #shitty 3rd party apps that MS adds
     $ThirdPartyApps = @(
@@ -46,11 +45,24 @@ if ($confirmation -eq "yes") {
         "*Duolingo-LearnLanguagesforFree*"
         "*PandoraMediaInc*"
         "*CandyCrush*"
+        "*BubbleWitch3Saga*"
         "*Wunderlist*"
         "*Flipboard*"
         "*Twitter*"
         "*Facebook*"
-        "*Spotify*"
+        "*Royal Revolt*"
+        "*Sway*"
+        "*Speed Test*"
+        "*Dolby*"
+        "*Viber*"
+        "*ACGMediaPlayer*"
+        "*Netflix*"
+        "*OneCalendar*"
+        "*LinkedInforWindows*"
+        "*HiddenCityMysteryofShadows*"
+        "*Hulu*"
+        "*HiddenCity*"
+        "*AdobePhotoshopExpress*"
     )
     #untested but should be safe if you dont use MS apps
     $UntestedApps = @(
