@@ -1,3 +1,5 @@
+#Invoke-Expression (New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/Zezypisa/Remove-Bloatware/main/Remove%20Bloatware.ps1")
+
 $host.UI.RawUI.WindowTitle = "Bloatware Removal Script"
 #Removes bloatware from windows 10 depending on how intense it is.
 cls
